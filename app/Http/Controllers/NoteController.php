@@ -28,7 +28,12 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $valide= $request->validate([
+            'matiere'=>'required|min:2|max:20',
+            'note'=>'required |max:10'
+        ]);
+        $note= new Note($valide);
+        return $note;
     }
 
     /**

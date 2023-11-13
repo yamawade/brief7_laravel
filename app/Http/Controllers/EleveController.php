@@ -12,7 +12,8 @@ class EleveController extends Controller
      */
     public function index()
     {
-        //
+        $eleve = Eleve::all();
+        return view('Eleves.listeEleve',compact('eleve'));
     }
 
     /**
@@ -20,7 +21,7 @@ class EleveController extends Controller
      */
     public function create()
     {
-        //
+        return view('Eleves.ajoutEleve');
     }
 
     /**
@@ -28,7 +29,26 @@ class EleveController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $eleve= new Eleve();
+        $request->validate([
+            'nomEleve'=>'required|min:2|max:20 ',
+            'prenomEleve'=>'required |min:2|max:20',
+            'dateNaiss'=>'required |date',
+            'matEleve'=>'required ',
+            'classe'=>'required',
+            'sexe'=>'required',
+
+        ]);
+        $eleve->matricule=$request->matEleve;
+        $eleve->nomEleve=$request->nomEleve;
+        $eleve->prenomEleve=$request->prenomEleve;
+        $eleve->date_de_naissance=$request->dateNaiss;
+        $eleve->classe=$request->classe;
+        $eleve->sexe=$request->sexe;
+        if ($eleve->save()) {
+            return redirect('/listeEleve');
+        }
+
     }
 
     /**
