@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Note;
+use App\Models\Eleve;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
@@ -12,7 +13,10 @@ class NoteController extends Controller
      */
     public function index()
     {
-        //
+        $note = Note::all();
+        //$eleve = Eleve::all();
+        $eleve = Eleve::where('id','=',$note->eleve_id)->get();
+        return view('Notes.listeNote', compact('note','eleve'));
     }
 
     /**
@@ -42,9 +46,10 @@ class NoteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Note $note)
+    public function edit($id)
     {
-        //
+        $note = Note::findOrFail($id);
+        return view('Notes.modifierNote', compact('note'));
     }
 
     /**

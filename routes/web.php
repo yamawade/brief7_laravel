@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,6 @@ Route::get('/ajoutNote/{id}', function () {
     return view('Notes.ajoutNote');
 });
 
-Route::get('/listeNote', function () {
-    return view('Notes.listeNote');
-});
+Route::get('/listeNote', [NoteController::class,'index']);
+
+Route::get('/modifierNote/{id}', [NoteController::class,'edit']);

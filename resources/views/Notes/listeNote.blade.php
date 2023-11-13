@@ -10,10 +10,22 @@
                         <th>Nom</th>
                         <th>Prenom</th>
                         <th>Note</th>
+                        <th>Matiere</th>
                         <th>Action</th>
                     </tr>
                 </thead>
-                
+                @foreach($note as $n)
+                    <tr>
+                        @foreach($eleve as $e)
+                            @if($e->id == $note->eleve_id)
+                                <td>{{$e->nomEleve}}</td>
+                                <td>{{$e->prenomEleve}}</td>
+                            @endif
+                        @endforeach
+                        <td>{{$n->note}}</td>
+                        <td>{{$n->matiere}}</td>
+                    </tr>
+                @endforeach 
             </table>
         </div>
     </div>
