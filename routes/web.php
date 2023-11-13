@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/ajoutEleve', function () {
+    return view('Eleves/ajoutEleve');
+});
+
+Route::get('/listeEleve', function () {
+    return view('Eleves/listeEleve');
+});
