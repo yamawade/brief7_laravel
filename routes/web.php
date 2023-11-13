@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EleveController;
+use App\Http\Controllers\NoteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,9 +24,7 @@ Route::post('/ajouterEleve',[EleveController::class,'store']);
 
 Route::get('/listeEleve', [EleveController::class,'index']);
 
-Route::get('/ajoutNote/{id}', function () {
-    return view('Notes.ajoutNote');
-});
+Route::post('/ajoutNote/{id}',[NoteController::class,'store']);
 
 Route::get('/listeNote', function () {
     return view('Notes.listeNote');
