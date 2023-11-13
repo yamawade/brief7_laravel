@@ -24,3 +24,11 @@ Route::get('/ajoutEleve', function () {
 Route::get('/listeEleve', function () {
     return view('Eleves/listeEleve');
 });
+
+Route::get('/ajoutNote/{id}', function () {
+    return view('Notes.ajoutNote');
+});
+
+Route::get('/listeNote', function () {
+    return view('Notes.listeNote');
+});

@@ -23,10 +23,10 @@
             <a class="nav-link" href="/listeEleve">ListerEleve</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">AjouterNote</a>
+            <a class="nav-link" href="/ajoutNote/{id}">AjouterNote</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="#">ListerNote</a>
+            <a class="nav-link" href="/listeNote">ListerNote</a>
             </li>
         </ul>
         <form class="d-flex">
