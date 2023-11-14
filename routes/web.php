@@ -33,9 +33,6 @@ Route::post('/ajouterNote',[NoteController::class,'store']);
 
 
 Route::get('/modifierNote/{id}', [NoteController::class,'edit']);
-<<<<<<< HEAD
 Route::post('/modifNote/{id}', [NoteController::class,'update']);
-=======
 Route::get('/modifie/eleve/{id}', [EleveController::class,'modifieEleve']);
 Route::get('/suppEleve/{id}', [EleveController::class,'destroy']);
->>>>>>> 05c7ad113df30a84cb6bf3cfd6bf20324df2f63a
