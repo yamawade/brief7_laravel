@@ -62,9 +62,10 @@ class EleveController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Eleve $eleve)
+    public function modifieEleve()
     {
-        //
+        return view('eleves.modifierEleve');
+
     }
 
     /**
