@@ -9,7 +9,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="polaris">POLARIS</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,19 +22,14 @@
             <li class="nav-item">
             <a class="nav-link" href="/listeEleve">ListerEleve</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link" href="/ajoutNote/{id}">AjouterNote</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="/listeNote">ListerNote</a>
-            </li>
         </ul>
         <form class="d-flex">
-            <input class="form-control me-sm-2" type="search" placeholder="Search">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control me-sm-2" type="rechercher" placeholder="rechercher">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">rechercher</button>
         </form>
         </div>
     </div>
     </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
