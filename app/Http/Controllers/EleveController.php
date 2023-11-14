@@ -65,18 +65,38 @@ class EleveController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function modifieEleve()
+    public function edit($id)
     {
-        return view('eleves.modifierEleve');
+        $eleve= Eleve::find($id);
+        return view('Eleves/modifierEleve',compact('eleve'));
 
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Eleve $eleve)
+    public function update(Request $request)
     {
-        //
+       // dd($request);
+        $request->validate([
+            'nomEleve'=>'required|min:2|max:20 ',
+            'prenomEleve'=>'required |min:2|max:20',
+            'dateNaiss'=>'required |date',
+            'classe'=>'required',
+            'sexe'=>'required',
+
+        ]);
+        $eleve=Eleve::find($request->id);
+        $eleve->nomEleve=$request->nomEleve;
+        $eleve->prenomEleve=$request->prenomEleve;
+        $eleve->date_de_naissance=$request->dateNaiss;
+        $eleve->classe=$request->classe;
+        $eleve->sexe=$request->sexe;
+        if ($eleve->update()) {
+            return redirect('/listeEleve');
+        }
+          return redirect('/listeEleve');
+
     }
 
     /**
@@ -95,4 +115,7 @@ class EleveController extends Controller
       }
 
     }
+    // public function voirdetails(){
+    //     return view('Eleves/showEleve');
+    // }
 }
