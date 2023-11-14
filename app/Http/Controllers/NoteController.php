@@ -58,18 +58,30 @@ class NoteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        $note = Note::findOrFail($id);
-        return view('Notes.modifierNote', compact('note'));
+        $notes= Note::where('eleve_id',$request->id)->get();
+        return view('Notes.modifierNote', compact('notes'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Note $note)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'matiere' => 'required',
+            'note' => 'required'
+        ]);
+
+        $note = Note::findOrFail($request->id);
+        $note->matiere = $request->matiere;
+        $note->note = $request->note;
+
+        if($note->update()){
+            return redirect('/listeEleve');
+        }
+        
     }
 
     /**
