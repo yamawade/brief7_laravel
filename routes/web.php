@@ -33,7 +33,13 @@ Route::post('/ajouterNote',[NoteController::class,'store']);
 
 
 Route::get('/modifierNote/{id}', [NoteController::class,'edit']);
+<<<<<<< HEAD
 Route::get('/modifie/eleve/{id}', [EleveController::class,'modifieEleve']);
 Route::get('/suppEleve/{id}', [EleveController::class,'destroy']);
 route::post('/modifNote/{id}',[NoteController::class,'update']);
 route::get('/supprimerNote/{id}',[NoteController::class,'delete']);
+=======
+Route::post('/modifNote/{id}', [NoteController::class,'update']);
+Route::get('/modifie/eleve/{id}', [EleveController::class,'modifieEleve']);
+Route::get('/suppEleve/{id}', [EleveController::class,'destroy']);
+>>>>>>> 53235fe98b1764a994fce818c99485aaf5034fec
