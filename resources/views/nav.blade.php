@@ -22,12 +22,7 @@
             <li class="nav-item">
             <a class="nav-link" href="/listeEleve">ListerEleve</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link" href="/ajoutNote/{id}">AjouterNote</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="/listeNote">ListerNote</a>
-            </li>
+            
         </ul>
         <form class="d-flex">
             <input class="form-control me-sm-2" type="search" placeholder="Search">

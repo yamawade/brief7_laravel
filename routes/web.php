@@ -30,3 +30,4 @@ Route::post('/ajouterNote',[NoteController::class,'store']);
 
 
 Route::get('/modifierNote/{id}', [NoteController::class,'edit']);
+Route::post('/modifNote/{id}', [NoteController::class,'update']);

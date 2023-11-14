@@ -17,10 +17,11 @@
                             <h5 class="card-title"><b>Note {{$key+1}}: {{$note->note}}</b></h5>
                             <h5 class="card-title"><b>Matiere: {{$note->matiere}}</b></h5>
                         @endforeach
-                        <a href="" class="btn btn-success offset-4">Modifie Eleve</a>
-                        <a href="" class="btn btn-warning ">Modifier Note</a>
                     </div>
-                        
+                    <div class="card-body">
+                        <a href="" class="btn btn-success offset-4">Modifie Eleve</a>
+                        <a href="/modifierNote/{{$eleve->id}}" class="btn btn-warning ">Modifier Note</a>
+                    </div>
 
                 </div>        
             </div>
