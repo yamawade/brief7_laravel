@@ -34,7 +34,7 @@ class EleveController extends Controller
         $request->validate([
             'nomEleve'=>'required|min:2|max:20 ',
             'prenomEleve'=>'required |min:2|max:20',
-            'dateNaiss'=>'required |date',
+            'dateNaiss'=>'required |date|before:2020-01-01',
             'matEleve'=>'required ',
             'classe'=>'required',
             'sexe'=>'required',
@@ -65,10 +65,17 @@ class EleveController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
+<<<<<<< HEAD
     public function edit($id)
     {
         $eleve= Eleve::find($id);
         return view('Eleves/modifierEleve',compact('eleve'));
+=======
+    public function modifieEleve()
+    {
+        return view('eleves.modifierEleve');
+
+>>>>>>> 8a09c3f860072087337172b7b48c4aad0b14f8ec
     }
 
     /**
@@ -101,9 +108,18 @@ class EleveController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Eleve $eleve)
+    public function destroy(Request $req)
     {
-        //
+      $eleve=Eleve::FindOrFail($req->id);
+      $note=Note::where('eleve_id',$req->id)->get();
+      if ($eleve->delete()) {
+        foreach ($note as $notes) {
+            $notes->delete();
+        }
+        return back() ;
+
+      }
+
     }
     // public function voirdetails(){
     //     return view('Eleves/showEleve');
