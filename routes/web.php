@@ -24,7 +24,8 @@ Route::post('/ajouterEleve',[EleveController::class,'store']);
 
 Route::get('/listeEleve', [EleveController::class,'index']);
 
-Route::post('/ajoutNote/{id}',[NoteController::class,'store']);
+Route::post('/ajouterNote/{id}',[NoteController::class,'store']);
+Route::get('/ajoutNote/{id}',[NoteController::class,'create']);
 
 Route::get('/listeNote', function () {
     return view('Notes.listeNote');

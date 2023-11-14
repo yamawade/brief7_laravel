@@ -21,7 +21,7 @@ class NoteController extends Controller
      */
     public function create()
     {
-        //
+        return view("Notes.ajoutNote");
     }
 
     /**
@@ -31,11 +31,13 @@ class NoteController extends Controller
     public function store(Request $request)
     {
         $id = Eleve::findOrFail($request->id);
+        dd($id);
         $notes = new Note();
         $request->validate(['matiere' => 'required','note' => 'required']);
         $notes->matiere = $request->matiere;
         $notes->notes = (float)$request->note;
-        $notes->eleve_id = $id->id;
+        $notes->eleve_id = $request->id;
+       
         if ($notes->save()) {
             redirect('/listeEleve');
         }

@@ -5,7 +5,7 @@
         <div class="col-md-6 offset-3 mt-5">
             <h5 class="card-header text-center bg-dark text-white">AJOUT Note</h5>
             <div class="card-body">
-                <form method="POST" action="/ajoutNote/{id}">
+                <form method="POST" action="ajouterNote/{id}">
                     @csrf
                     <div class="form-group">
                         <label for="nomEleve">Matière</label>

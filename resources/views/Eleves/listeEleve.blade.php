@@ -13,6 +13,22 @@
                         <th>Action</th>
                     </tr>
                 </thead>
+
+                @foreach($eleves as $eleve)
+                    <tr>
+                        <td> {{$eleve->matricule}} </td>
+                        <td> {{$eleve->nomEleve}} </td>
+                        <td> {{$eleve->prenomEleve}} </td>
+                        <td> {{$eleve->date_de_naissance}} </td>
+                        <td>
+                            <a href="" class="btn btn-success"> MODIFIER </a>
+                            <a href="" class="btn btn-danger"> SUPPRIMER </a>
+                            <a href="/ajoutNote/{{$eleve->id}}" class="btn btn-danger"> AJOUTER NOTE </a>
+
+                        </td>
+                    </tr>
+                @endforeach
+
                 
             </table>
         </div>
