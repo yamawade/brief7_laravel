@@ -82,4 +82,7 @@ class EleveController extends Controller
     {
         //
     }
+    public function creerroutepourmodifier(){
+        return view('Eleves/modifierEleve');
+    }
 }

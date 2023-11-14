@@ -10,7 +10,7 @@
                         <th>Nom</th>
                         <th>Prenom</th>
                         <th>Date Naissance</th>
-                        <th>Action</th>
+                        <th>Action</th> 
                     </tr>
                 </thead> 
                 @foreach($eleves as $eleve)
@@ -20,9 +20,9 @@
                         <td> {{$eleve->prenomEleve}} </td>
                         <td> {{$eleve->date_de_naissance}} </td>
                         <td>  
-                            <a href="" class="btn btn-success"> MODIFIER </a>
+                        <a href="/eleve/modifier/{{$eleve->id}}" class="btn btn-success"> MODIFIER </a>
                             <a href="" class="btn btn-danger"> SUPPRIMER </a>
-                            <a href=""  class="btn btn-warning"> AJOUTER NOTE </a>
+                            <a href="" > AJOUTER NOTE </a>
                              
                         </td>
                     </tr>

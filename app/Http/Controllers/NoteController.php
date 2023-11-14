@@ -13,15 +13,19 @@ class NoteController extends Controller
      */
     public function index()
     {
-        //
+        $note = Note::all();
+        //$eleve = Eleve::all();
+        $eleve = Eleve::where('id','=',$note->eleve_id)->get();
+        return view('Notes.listeNote', compact('note','eleve'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $id_eleve = Eleve::findOrFail($request->id);
+        return view("Notes.ajoutNote",compact('id_eleve'));
     }
 
     /**
@@ -32,14 +36,18 @@ class NoteController extends Controller
     {
         $id = Eleve::findOrFail($request->id);
         $notes = new Note();
-        $request->validate(['matiere' => 'required','note' => 'required']);
+        $request->validate([
+            'matiere' => 'required',
+            'note' => 'required'
+        ]);
+
         $notes->matiere = $request->matiere;
-        $notes->notes = (float)$request->note;
-        $notes->eleve_id = $id->id;
+        $notes->note = $request->note;
+        $notes->eleve_id = $request->id;
+       
         if ($notes->save()) {
-            redirect('/listeEleve');
+            return redirect('/listeEleve');
         }
-        return back();
     }
 
     /**
@@ -53,9 +61,10 @@ class NoteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Note $note)
+    public function edit($id)
     {
-        //
+        $note = Note::findOrFail($id);
+        return view('Notes.modifierNote', compact('note'));
     }
 
     /**
