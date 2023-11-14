@@ -22,13 +22,10 @@
             <li class="nav-item">
             <a class="nav-link" href="/listeEleve">ListerEleve</a>
             </li>
-<<<<<<< HEAD
             
-=======
             <li class="nav-item">
             <a class="nav-link" href="/ajoutNote/{id}">AjouterNote</a>
             </li>
->>>>>>> 05c7ad113df30a84cb6bf3cfd6bf20324df2f63a
         </ul>
         <form class="d-flex">
             <input class="form-control me-sm-2" type="rechercher" placeholder="rechercher">
