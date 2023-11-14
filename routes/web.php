@@ -23,10 +23,10 @@ Route::get('/ajoutEleve',[EleveController::class,'create'] );
 Route::post('/ajouterEleve',[EleveController::class,'store']);
 
 Route::get('/listeEleve', [EleveController::class,'index']);
+Route::get('/detailEleve/{id}',[EleveController::class,'show']);
 
 Route::get('/ajoutNote/{id}',[NoteController::class,'create']);
 Route::post('/ajouterNote',[NoteController::class,'store']);
 
-Route::get('/listeNote', [NoteController::class,'index']);
 
 Route::get('/modifierNote/{id}', [NoteController::class,'edit']);

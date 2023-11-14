@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Note;
 use App\Models\Eleve;
 use Illuminate\Http\Request;
 
@@ -54,9 +55,11 @@ class EleveController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Eleve $eleve)
+    public function show($id)
     {
-        //
+        $eleve= Eleve::find($id);
+        $notes= Note::where('eleve_id','=',$id)->get();
+        return view('Eleves.showEleve',compact('eleve','notes'));
     }
 
     /**
