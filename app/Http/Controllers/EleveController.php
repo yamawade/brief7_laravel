@@ -65,9 +65,10 @@ class EleveController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Eleve $eleve)
+    public function modifieEleve()
     {
-        //
+        return view('eleves.modifierEleve');
+
     }
 
     /**
@@ -81,8 +82,17 @@ class EleveController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Eleve $eleve)
+    public function destroy(Request $req)
     {
-        //
+      $eleve=Eleve::FindOrFail($req->id);
+      $note=Note::where('eleve_id',$req->id)->get();
+      if ($eleve->delete()) {
+        foreach ($note as $notes) {
+            $notes->delete();
+        }
+        return back() ;
+
+      }
+
     }
 }
