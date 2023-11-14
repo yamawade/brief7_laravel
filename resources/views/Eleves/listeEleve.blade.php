@@ -10,12 +10,7 @@
                         <th>Nom</th>
                         <th>Prenom</th>
                         <th>Date Naissance</th>
-<<<<<<< HEAD
                         <th>Action</th> 
-=======
-                        <th>Classe</th>
-                        <th>Action</th>
->>>>>>> 21620d14b188f8e8a4d1636698261be26155fd76
                     </tr>
                 </thead> 
                 @foreach($eleves as $eleve)
@@ -24,11 +19,6 @@
                         <td> {{$eleve->nomEleve}} </td>
                         <td> {{$eleve->prenomEleve}} </td>
                         <td> {{$eleve->date_de_naissance}} </td>
-<<<<<<< HEAD
-
-=======
-                        <td> {{$eleve->classe}} </td>
->>>>>>> 21620d14b188f8e8a4d1636698261be26155fd76
                         <td>
                             <a href="/detailEleve/{{$eleve->id}}" class="btn btn-secondary">Voir Détail</a>
                             <a href="/suppEleve/{{$eleve->id}}" class="btn btn-danger">SUPPRIMER</a>
@@ -36,11 +26,6 @@
                         </td>
                     </tr>
                 @endforeach
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 21620d14b188f8e8a4d1636698261be26155fd76
             </table>
         </div>
     </div>
