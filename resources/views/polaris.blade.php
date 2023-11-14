@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body style="background-image:url({{asset('image/polaris.png')}})">
+<!-- <body style="background-image:url({{asset('image/polaris.png')}})"> -->
 
 </body>
 </html>
