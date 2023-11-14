@@ -19,11 +19,11 @@
                         <td> {{$eleve->nomEleve}} </td>
                         <td> {{$eleve->prenomEleve}} </td>
                         <td> {{$eleve->date_de_naissance}} </td>
-                        <td>  
-                        <a href="/eleve/modifier/{{$eleve->id}}" class="btn btn-success"> MODIFIER </a>
-                            <a href="" class="btn btn-danger"> SUPPRIMER </a>
-                            <a href="" > AJOUTER NOTE </a>
-                             
+
+                        <td>
+                            <a href="/detailEleve/{{$eleve->id}}" class="btn btn-secondary">Voir Détail</a>
+                            <a href="" class="btn btn-danger">SUPPRIMER</a>
+                            <a href="/ajoutNote/{{$eleve->id}}" class="btn btn-warning">AJOUTER NOTE</a>
                         </td>
                     </tr>
                 @endforeach

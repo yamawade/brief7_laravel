@@ -13,10 +13,7 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $note = Note::all();
-        //$eleve = Eleve::all();
-        $eleve = Eleve::where('id','=',$note->eleve_id)->get();
-        return view('Notes.listeNote', compact('note','eleve'));
+       //
     }
 
     /**
