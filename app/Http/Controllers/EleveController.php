@@ -34,7 +34,7 @@ class EleveController extends Controller
         $request->validate([
             'nomEleve'=>'required|min:2|max:20 ',
             'prenomEleve'=>'required |min:2|max:20',
-            'dateNaiss'=>'required |date',
+            'dateNaiss'=>'required |date|before:2020-01-01',
             'matEleve'=>'required ',
             'classe'=>'required',
             'sexe'=>'required',
