@@ -82,8 +82,17 @@ class EleveController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Eleve $eleve)
+    public function destroy(Request $req)
     {
-        //
+      $eleve=Eleve::FindOrFail($req->id);
+      $note=Note::where('eleve_id',$req->id)->get();
+      if ($eleve->delete()) {
+        foreach ($note as $notes) {
+            $notes->delete();
+        }
+        return back() ;
+
+      }
+
     }
 }

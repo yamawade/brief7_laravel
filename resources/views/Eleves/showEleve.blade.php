@@ -1,10 +1,6 @@
 @include('nav')
 <div class="container">
-<<<<<<< HEAD
     <div class="row">
-=======
-    <div class="row">  
->>>>>>> 24769e57bfa8de89bdd57f65dfa46371ad806d9a
         <div class="mt-4">
             <div class="card">
                 <div class="card-header">
@@ -24,7 +20,6 @@
                         <a href="" class="btn btn-success offset-4">Modifie Eleve</a>
                         <a href="" class="btn btn-warning ">Modifier Note</a>
                     </div>
-<<<<<<< HEAD
 
 
                 </div>
@@ -32,12 +27,3 @@
         </div>
     </div>
 </div>
-=======
-                        
-
-                </div>        
-            </div>
-        </div>
-    </div>
-</div>
->>>>>>> 24769e57bfa8de89bdd57f65dfa46371ad806d9a

@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/polaris', function () {
+    return view('polaris');
+});
 
 Route::get('/ajoutEleve',[EleveController::class,'create'] );
 Route::post('/ajouterEleve',[EleveController::class,'store']);
@@ -31,3 +34,4 @@ Route::post('/ajouterNote',[NoteController::class,'store']);
 
 Route::get('/modifierNote/{id}', [NoteController::class,'edit']);
 Route::get('/modifie/eleve/{id}', [EleveController::class,'modifieEleve']);
+Route::get('/suppEleve/{id}', [EleveController::class,'destroy']);

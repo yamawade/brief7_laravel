@@ -22,7 +22,7 @@
                         <td> {{$eleve->date_de_naissance}} </td>
                         <td>
                             <a href="/detailEleve/{{$eleve->id}}" class="btn btn-secondary">Voir Détail</a>
-                            <a href="" class="btn btn-danger">SUPPRIMER</a>
+                            <a href="/suppEleve/{{$eleve->id}}" class="btn btn-danger">SUPPRIMER</a>
                             <a href="/ajoutNote/{{$eleve->id}}" class="btn btn-warning">AJOUTER NOTE</a>
 
                         </td>
