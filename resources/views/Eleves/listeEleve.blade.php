@@ -22,12 +22,11 @@
                         <td>  
                             <a href="" class="btn btn-success"> MODIFIER </a>
                             <a href="" class="btn btn-danger"> SUPPRIMER </a>
-                            <a href="" > AJOUTER NOTE </a>
+                            <a href=""  class="btn btn-warning"> AJOUTER NOTE </a>
                              
                         </td>
                     </tr>
                 @endforeach
-                
             </table>
         </div>
     </div>
