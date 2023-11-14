@@ -23,7 +23,7 @@
                         <td>
                             <a href="" class="btn btn-success"> MODIFIER </a>
                             <a href="" class="btn btn-danger"> SUPPRIMER </a>
-                            <a href="/ajoutNote/{{$eleve->id}}" class="btn btn-danger"> AJOUTER NOTE </a>
+                            <a href="/ajoutNote/{{$eleve->id}}" class="btn btn-warning"> AJOUTER NOTE </a>
 
                         </td>
                     </tr>

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Eleve;
 use App\Models\Note;
-use App\Models\Eleve;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
@@ -23,9 +22,10 @@ class NoteController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view("Notes.ajoutNote");
+        $id_eleve = Eleve::findOrFail($request->id);
+        return view("Notes.ajoutNote",compact('id_eleve'));
     }
 
     /**
@@ -35,17 +35,19 @@ class NoteController extends Controller
     public function store(Request $request)
     {
         $id = Eleve::findOrFail($request->id);
-        dd($id);
         $notes = new Note();
-        $request->validate(['matiere' => 'required','note' => 'required']);
+        $request->validate([
+            'matiere' => 'required',
+            'note' => 'required'
+        ]);
+
         $notes->matiere = $request->matiere;
-        $notes->notes = (float)$request->note;
+        $notes->note = $request->note;
         $notes->eleve_id = $request->id;
        
         if ($notes->save()) {
-            redirect('/listeEleve');
+            return redirect('/listeEleve');
         }
-        return back();
     }
 
     /**
