@@ -23,12 +23,10 @@ Route::post('/ajouterNote',[NoteController::class,'store']);
 
 
 Route::get('/modifierNote/{id}', [NoteController::class,'edit']);
-<<<<<<< HEAD
 
 Route::get('/eleve/modifier/{id}', [EleveController::class,'edit']);
 Route::post('/eleve/modifierEleve/{id}', [EleveController::class,'update']);
 
-=======
 Route::get('/modifie/eleve/{id}', [EleveController::class,'modifieEleve']);
 Route::get('/suppEleve/{id}', [EleveController::class,'destroy']);
 route::post('/modifNote/{id}',[NoteController::class,'update']);
@@ -36,4 +34,3 @@ route::get('/supprimerNote/{id}',[NoteController::class,'delete']);
 Route::post('/modifNote/{id}', [NoteController::class,'update']);
 Route::get('/modifie/eleve/{id}', [EleveController::class,'modifieEleve']);
 Route::get('/suppEleve/{id}', [EleveController::class,'destroy']);
->>>>>>> 21620d14b188f8e8a4d1636698261be26155fd76
