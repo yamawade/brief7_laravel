@@ -10,6 +10,7 @@
                         <th>Nom</th>
                         <th>Prenom</th>
                         <th>Date Naissance</th>
+                        <th>Classe</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -20,6 +21,7 @@
                         <td> {{$eleve->nomEleve}} </td>
                         <td> {{$eleve->prenomEleve}} </td>
                         <td> {{$eleve->date_de_naissance}} </td>
+                        <td> {{$eleve->classe}} </td>
                         <td>
                             <a href="/detailEleve/{{$eleve->id}}" class="btn btn-secondary">Voir Détail</a>
                             <a href="/suppEleve/{{$eleve->id}}" class="btn btn-danger">SUPPRIMER</a>

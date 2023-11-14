@@ -22,10 +22,6 @@
             <li class="nav-item">
             <a class="nav-link" href="/listeEleve">ListerEleve</a>
             </li>
-            
-            <li class="nav-item">
-            <a class="nav-link" href="/ajoutNote/{id}">AjouterNote</a>
-            </li>
         </ul>
         <form class="d-flex">
             <input class="form-control me-sm-2" type="rechercher" placeholder="rechercher">
@@ -34,5 +30,6 @@
         </div>
     </div>
     </nav>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
