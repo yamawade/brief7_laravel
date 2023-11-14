@@ -17,6 +17,10 @@
                             <input type="text" class="form-control" id="note"  value="{{$note->note}}" name="note">
                         </div>
                         <button type="submit" class="btn btn-dark offset-4 mt-2">Modifier La Note</button>
+
+                        @foreach($notes as $note)
+                        <a href="/supprimerNote/{{$note->id}}" class="btn btn-warning ">supprimer Note</a>
+                        @endforeach
                     </form>
                 @endforeach
             </div>

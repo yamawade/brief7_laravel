@@ -18,13 +18,10 @@
                             <h5 class="card-title"><b>Matiere: {{$note->matiere}}</b></h5>
                         @endforeach
                     </div>
-<<<<<<< HEAD
                     <div class="card-body">
                         <a href="" class="btn btn-success offset-4">Modifie Eleve</a>
                         <a href="/modifierNote/{{$eleve->id}}" class="btn btn-warning ">Modifier Note</a>
                     </div>
-=======
->>>>>>> 05c7ad113df30a84cb6bf3cfd6bf20324df2f63a
 
 
                 </div>
